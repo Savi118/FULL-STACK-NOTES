@@ -1,0 +1,197 @@
+<!-- 
+--------------------
+        HTML
+--------------------
+
+-----------------------------------------------
+        Lesson-1 - Structure Of HTML
+-----------------------------------------------
+
+---------------------------------------------------------------------------------------------
+1. What is HTML?
+----------------
+        HTML (HyperText Markup Language) is the standard language used to create web pages.
+        It defines the structure of the content using elements (tags).
+
+        Every web page you see on the internet starts with a basic HTML document structure, which tells the browser how to read and render the content.
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+2. Basic Structure of HTML
+--------------------------
+        - There is VS Code shortcut to simply add basic structure by using this "!".
+
+        <!DOCTYPE html>
+        <html lang="en">
+
+          <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document</title>
+          </head>
+
+          <body>
+                <tag open> Content </tag close>
+          </body>
+
+        </html>
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+3. Explanation on Each Part
+---------------------------
+        1. <!DOCTYPE html>
+        -----------------------------------------------------------------
+        |  It's a declaration, not a tag.                               |
+        |                                                               |
+        |  Tells the browser that this document is written in HTML5.    |
+        |                                                               |
+        |  Helps browsers interpret and render the page correctly.      |
+        |                                                               |
+        |  Always place it at the top of the HTML file (before <html>). |
+        -----------------------------------------------------------------
+        2. <html> Tag
+        ----------------------------------------------------------------------
+        |  The root element that wraps all HTML content.                     |
+        |                                                                    |
+        |  Contains two main sections: <head> and <body>.                    |
+        |                                                                    |
+        |  Usually includes a lang attribute to specify the page’s language. |
+        |                                                                    |
+        |  <html lang="en">                                                  |
+        ----------------------------------------------------------------------
+        3. <head> Tag
+        ----------------------------------------------------------------------------------------
+        |  The <head> contains metadata — information about the webpage, not visible to users. |
+        |                                                                                      |
+        |  Common elements inside <head>:                                                      |
+        |                                                                                      |
+        |       <title> → Title shown on browser tab.                                          |
+        |                                                                                      |
+        |       <meta> → Defines metadata like character encoding, keywords, description.      |
+        |                                                                                      |
+        |       <link> → Connects external CSS or icons.                                       |
+        |                                                                                      |
+        |       <style> → Internal CSS styles.                                                 |
+        |                                                                                      |
+        |       <script> → JavaScript that loads before the page renders.                      |
+        |                                                                                      |
+        |  <head>                                                                              |
+        |       <meta charset="UTF-8" />                                                       |
+        |       <meta name="description" content="A beginner HTML example" />                  |
+        |       <title>HTML Structure</title>                                                  |
+        |  </head>                                                                             |
+        ----------------------------------------------------------------------------------------
+        4. <body> Tag
+        -----------------------------------------------------------------------
+        |  The <body> contains everything that appears visually on the page.  |
+        |                                                                     |
+        |  Includes headings, paragraphs, images, lists, links, buttons, etc. |
+        |                                                                     |
+        |  You can have only one <body> per document.                         |
+        |                                                                     |
+        |  <body>                                                             |
+        |       <h1>Welcome to My Website</h1>                                |
+        |       <p>This is my first paragraph.</p>                            |
+        |       <a href="https://example.com">Visit Example</a>               |
+        |  </body>                                                            |
+        -----------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+4. Visual Hierarchy
+-------------------
+                <!DOCTYPE html>
+                └── <html>
+                    ├── <head> 
+                    │     ├── <meta>
+                    │     ├── <title>
+                    │     └── <link> / <style> / <script>
+                    └── <body>
+                        ├── <h1> ... </h1>
+                        ├── <p> ... </p>
+                        └── other visible content
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+5. Real-World Example
+---------------------
+        see example.html in folder
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+6. Interview Tips
+-----------------
+        Questions
+        ---------
+        1. What does <!DOCTYPE html> mean?
+        ---------------------------------------------------
+        |  It tells the browser that the page uses HTML5. |
+        ---------------------------------------------------
+        2. How many <head> and <body> tags can an HTML document have?
+        ------------------------------------------------
+        |  Only one <head> and one <body> are allowed. | 
+        ------------------------------------------------
+        3. What’s inside <head> vs <body>?
+        --------------------------------------------------
+        |  <head> = metadata, <body> = visible content.  |
+        --------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+7. Common Mistakes
+------------------
+        Missing <!DOCTYPE html> → browser may use “quirks mode”.
+
+        Forgetting to close <html> or <body>.
+        
+        Placing visible content inside <head>.
+
+        Using multiple <body> tags.
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+8.Mini Practice Tasks
+---------------------
+        You can check MINI-Tasks folder for Solution.
+
+        Task 1
+        ------------------------------------------------------
+        |  Create an HTML file index.html with:              |
+        |       Page title “My Learning Page”                |
+        |       A heading: “Welcome to HTML!”                |
+        |       A paragraph describing what you’re learning. |
+        ------------------------------------------------------
+        Task 2
+        ---------------------------------------------------------------
+        |  Add metadata inside <head> (author, description, charset). |
+        ---------------------------------------------------------------
+        Task 3
+        ---------------------------------------------------------------------------------
+        |  Validate your HTML code at https://validator.w3.org/ — fix any errors shown. |
+        |                                                                               |
+        |  Just copy the code inside any task or example and paste on above website you |
+        |  can check HTML error inside your code.                                       |
+        ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+9. Summary
+----------
+        | Section           | Description                                |
+        | ----------------- | ------------------------------------------ |
+        | <!DOCTYPE html>   | Tells browser you’re using HTML5           |
+        | <html>            | Wraps everything on the page               |
+        | <head>            | Hidden info (title, meta, styles, scripts) |
+        | <body>            | Visible content (text, images, links)      |
+
+---------------------------------------------------------------------------------------------
+-->
