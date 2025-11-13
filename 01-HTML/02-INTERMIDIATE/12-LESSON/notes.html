@@ -1,0 +1,245 @@
+<!-- 
+--------------------
+        HTML
+--------------------
+
+-----------------------------------------------
+        Lesson-2 - Head Elements
+-----------------------------------------------
+
+---------------------------------------------------------------------------------------------
+1. What is the <head> Section?
+------------------------------
+        The <head> element in HTML contains metadata — information about the webpage that is not displayed directly on the page but is used by browsers, search engines, and other web services.
+
+        Think of <head> as your page’s “control center.”
+        
+        Example:
+          <head>
+            <title>BookVault - My Library</title>
+            <meta charset="UTF-8" />
+            <meta name="description" content="A personalized library to store and explore books" />
+            <link rel="stylesheet" href="style.css" />
+            <script src="app.js" defer></script>
+          </head>
+
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+2. Key Head Elements Explained
+------------------------------
+        1. <title> — Page Title
+        -------------------------------------------------------------------------------
+        |  Defines the title shown on the browser tab and in search engine results.   |
+        |                                                                             |
+        |  Only one <title> is allowed per page.                                      |
+        |                                                                             |
+        |  Helps with SEO.                                                            |
+        |                                                                             |
+        |  Example:                                                                   |
+        |       <title>BookVault - Explore Books Online</title>                       |
+        |                                                                             |
+        |  Tip: Keep titles short (50–60 chars) and descriptive.                      |
+        |                                                                             |
+        |  Interview Tip:                                                             |
+        |       Q: Where does the <title> tag appear?                                 |
+        |       --------------------------------------------------------------------  |
+        |       |  In the browser tab and search engine results (not on the page). |  |
+        |       --------------------------------------------------------------------  |
+        -------------------------------------------------------------------------------
+        2. <meta> — Metadata About the Page
+        -----------------------------------------------------------------------------------------
+        |  Meta tags give extra information like author, description, keywords,                 | 
+        |  viewport settings, etc.                                                              |
+        |                                                                                       |
+        |  Common Types:                                                                        |
+        | ------------------------------------------------------------------------------------- |
+        |       Meta Tag      |           Purpose             |             Example             |
+        | ------------------- | ----------------------------- | ------------------------------- |
+        |       charset       |  Sets character encoding      |    <meta charset="UTF-8" />     |
+        | --------------------------------------------------------------------------------------|
+        |                     |                               |  <meta name="description"       |
+        |  name="description" |  SEO description              |   content="A personal           |
+        |                     |                               |    library app" />              |
+        | --------------------------------------------------------------------------------------|
+        |                     |                               |  <meta name="keywords"          | 
+        |   name="keywords"   |  Search keywords (deprecated) |   content="books,               |
+        |                     |                               |   library, react app" />        |
+        | --------------------------------------------------------------------------------------|
+        |    name="author"    |  Page author                  |  <meta name="author"            |
+        |                     |                               |   content="Saksham" />          |
+        | --------------------------------------------------------------------------------------|
+        |                     |                               |  <meta name="viewport"          |
+        |    name="viewport"  |  Responsive design on mobile  |   content="width=device-width,  |
+        |                     |                               |   initial-scale=1.0" />         |
+        | ------------------------------------------------------------------------------------- |
+        |                                                                                       |
+        |  Important:                                                                           |
+        |       The viewport tag is critical for mobile responsiveness.                         |
+        |                                                                                       |
+        |  Interview Tip:                                                                       |
+        |       Q: Why do we use <meta name="viewport">?                                        |
+        |       --------------------------------------------------------------------            |
+        |       |  It ensures proper scaling and responsiveness on mobile screens. |            |
+        |       --------------------------------------------------------------------            |
+        -----------------------------------------------------------------------------------------
+        3. <link> — Connect External Resources
+        ------------------------------------------------------------------------------------------
+        |  Used to link external files like CSS, fonts, or icons.                                 |
+        |                                                                                         |
+        |  Syntax:                                                                                |
+        |       <link rel="stylesheet" href="styles.css" /                                        |
+        |                                                                                         |
+        |  Common Uses:                                                                           |
+        |       CSS Stylesheets                                                                   |
+        |       Favicon                                                                           |
+        |       Google Fonts                                                                      |
+        |                                                                                         |
+        |  Examples:                                                                              |
+        |     <link rel="icon" type="image/png" href="/assets/favicon.png" />                     |
+        |     <link rel="preconnect" href="https://fonts.googleapis.com" />                       |
+        |     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" |
+        |      rel="stylesheet" />                                                                |
+        |                                                                                         |
+        |  Interview Tip:                                                                         |
+        |       Q: What’s the difference between <link> and <a>?                                  |
+        |       --------------------------------------------------------------------------------  |
+        |       |  <link> links external resources to the page, while <a> links to other pages.|  |
+        |       --------------------------------------------------------------------------------  |
+        ----------------------------------------------------------------------------------------
+        4. <style> — Internal CSS
+        -----------------------------------------------------------------------
+        |  Allows you to write CSS directly inside the <head> for that page.  |
+        |                                                                     |
+        |  Example:                                                           |
+        |     <style>                                                         |
+        |        body {                                                       |
+        |         background-color: #fafafa;                                  |
+        |         font-family: 'Poppins', sans-serif;                         |
+        |         }                                                           |
+        |        h1 {                                                         |
+        |         color: #333;                                                |
+        |         }                                                           |
+        |     </style>                                                        |
+        |                                                                     |
+        |  Use Case:                                                          |
+        |     Useful for quick styling or small pages —                       | 
+        |     not for large projects (prefer external CSS via <link>).        |
+        |                                                                     |
+        |  Interview Tip:                                                     |
+        |       Q: Which loads faster — internal or external CSS?             |
+        |       --------------------------------------------------------      |
+        |       |  Internal loads faster for single pages;             |      |
+        |       |  external is better for multiple pages (cached once).|      |
+        |       --------------------------------------------------------      |
+        -----------------------------------------------------------------------
+        5. <script> — JavaScript in HTML
+        ----------------------------------------------------------------------------
+        |  Used to include JavaScript code inside or link to an external JS file.  |
+        |                                                                          |
+        |  Inline Script Example:                                                  |
+        |     <script>                                                             |
+        |        alert("Welcome to BookVault!");                                   |
+        |     </script>                                                            |
+        |                                                                          |
+        |  External Script Example:                                                |
+        |     <script src="app.js"></script>                                       |
+        |                                                                          |
+        |  Attributes:                                                             |
+        |     defer — Executes script after the HTML is fully parsed.              | 
+        |     async — Executes as soon as loaded (without waiting for HTML).       |
+        |                                                                          |
+        |  Example:                                                                |
+        |     <script src="app.js" defer></script>                                 |
+        |                                                                          |
+        |  Interview Tip:                                                          |
+        |       Q: Difference between defer and async?                             |
+        |       -------------------------------------------------------------      |
+        |       |  defer: Loads in background, runs after DOM parsing.      |      |
+        |       |  async: Loads in background, runs immediately once loaded.|      |
+        |       -------------------------------------------------------------      |
+        ----------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+3. Putting It All Together
+--------------------------
+        Here’s a complete example of a <head> section used in a real-world project:
+                check example.html
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+4. Common Mistakes
+------------------
+        Forgetting to include <meta charset="UTF-8"> → special characters may display 
+        incorrectly.
+
+        Using multiple <title> tags → only the first works.
+        
+        Missing <meta name="viewport"> → mobile layout looks broken.
+
+        Placing <script> before closing </body> without defer — may cause rendering delays.
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+5.Mini Practice Tasks
+---------------------
+        You can check MINI-Tasks folder for Solution.
+
+        Task 1
+        ------------------------------------------------------
+        |  Create a new HTML file and:                       |
+        |       Set the title to your project’s name.        |
+        |       Add description and author meta tags.        |
+        |       Link an external stylesheet.                 |
+        |       Include a JavaScript file using defer.       |
+        ------------------------------------------------------
+        Task 2
+        --------------------------------------------
+        |  Experiment with:                        |
+        |       A favicon                          |
+        |       A Google font via <link>           |
+        |       A small internal <style> block     |
+        --------------------------------------------
+        Task 3
+        ------------------------------------------------------------------------------
+        |  Inspect your page in browser → Right click → View Page Source → <head>    |
+        |  See how the browser reads your metadata.                                  |
+        ------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+6. Summary
+----------
+      | Tag        | Purpose                  | Example                                     |
+      ---------------------------------------------------------------------------------------
+      | <title>    | Sets page title          | `<title>My Portfolio</title>`               |
+      | ----------------------------------------------------------------------------------- |
+      | <meta>     | Provides metadata        | `<meta name="description"                   |
+      |            |                          |   content="Web developer portfolio">`       |
+      | ----------------------------------------------------------------------------------- |
+      | <link>     | Links external resources | `<link rel="stylesheet" href="style.css">`  |
+      | ----------------------------------------------------------------------------------- |
+      | <style>    | Internal CSS             | `<style>body { color: blue; }</style>`      |
+      | ----------------------------------------------------------------------------------- |
+      | <script>   | Links or embeds JS       | `<script src="app.js" defer></script>`      |
+      | ----------------------------------------------------------------------------------- |
+
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+7. Real-World Analogy
+---------------------
+        Imagine your webpage is a person:
+
+                <head> = ID card (info, credentials, connections)
+
+                <body> = the actual person (appearance, content, behavior)
+---------------------------------------------------------------------------------------------
+-->

@@ -1,0 +1,275 @@
+<!-- 
+--------------------
+        HTML
+--------------------
+
+----------------------------------------------------------------------------
+        Lesson-6 - Images in HTML (Responsive Images & Optimization)
+----------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------
+1. What Is the <img> Tag?
+-------------------------
+        The <img> tag is used to embed images into a webpage.
+        
+        Unlike most elements, it is a self-closing tag (no separate closing tag).
+        
+        Basic Syntax:
+                <img src="image.jpg" alt="Description of image">
+
+        Attributes:
+                | Attributes    | Description              |
+                | ------------- | ------------------------ |
+                | src           | Specifies the path or    | 
+                |               | URL of the image         |
+                | ------------- | ------------------------ |
+                |               | Describes the image (for |
+                | alt           | accessibility or when    |
+                |               | image fails to load)     |
+                | ------------- | ------------------------ |
+                | title         | Shows a tooltip when     |
+                |               | hovered                  |
+                | ------------- | ------------------------ |
+                | width/height  | Controls image size      |
+                |               | (in px or %)             |
+                | ------------- | ------------------------ |
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+2. src Attribute (Source of Image)
+----------------------------------
+        Specifies the image location — can be local or external.
+
+        Example (Local File):
+                <img src="assets/logo.png" alt="BookVault Logo">
+
+        Example (External URL):
+                <img src="https://picsum.photos/300" alt="Random Image">
+
+        Tip:
+          Use relative paths (./images/photo.jpg) for project images — 
+          it’s more portable across environments.
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+3. alt Attribute (Alternative Text)
+-----------------------------------
+        Describes the image content for:
+                Accessibility (screen readers) 
+                SEO (Google reads alt text)
+                Fallback when image fails to load
+
+        Example:
+                <img src="cover.jpg" alt="Book cover with bookshelf background">
+
+        Never skip the alt attribute — it’s a key accessibility rule.      
+--------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------
+4. title Attribute (Tooltip Text)
+---------------------------------
+        Displays a small tooltip when hovering over the image.
+
+        Example:
+                <img src="profile.jpg" alt="User profile picture" 
+                        title="Saksham - Frontend Developer">
+        Note: 
+           title is optional and used mainly for UX enhancement.
+---------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------
+5. width and height Attributes
+------------------------------
+        Control the display size of an image.
+                
+        Example:
+                <img src="book.jpg" width="200" height="150" alt="Book Image">
+        
+        Tips: 
+                Prefer using CSS for resizing (to maintain flexibility).
+                Use same aspect ratio to avoid stretching.
+                Avoid hardcoding dimensions if using responsive design.
+        
+        Example with CSS:
+                img {
+                  width: 100%;
+                  height: auto;
+                }
+---------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------
+6. Responsive Images
+--------------------
+        To make images adjust to different screen sizes, use relative units or CSS.
+                
+        Example:
+                <img src="library.jpg" alt="Library Background" 
+                        style="max-width:100%; height:auto;">
+
+        Best Practices: 
+                Use max-width: 100%; to prevent overflow.
+                Always set height: auto;.
+                Use modern responsive tags like <picture> and srcset.
+---------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------
+7. Advanced: <picture> and srcset
+---------------------------------
+        These tags allow browsers to choose the best image for different devices or 
+        resolutions.
+                
+        Example:
+                <picture>
+                        <source srcset="banner-large.jpg" media="(min-width: 800px)">
+                        <source srcset="banner-small.jpg" media="(max-width: 799px)">
+                        <img src="banner-default.jpg" alt="BookVault Banner">
+                </picture>
+
+                The browser picks the right image automatically based on the device width.
+---------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------
+8. Image Optimization Techniques
+--------------------------------
+        Use proper formats:
+                | Format        | Use Case                       |
+                | ------------- | ------------------------------ |
+                | .jpg / .jpeg  | Photos, detailed images        |
+                | ------------- | ------------------------------ |
+                | .png          | Transparent backgrounds        |
+                | ------------- | ------------------------------ |
+                | .gif          | Animations                     |
+                | ------------- | ------------------------------ |
+                | .webp         | Lightweight, modern format     |
+                | ------------- | ------------------------------ |
+                | .svg          | Icons, logos, vector graphics  |
+                | ------------- | ------------------------------ |
+        
+        Compress Images:
+                Use tools like:
+                        TinyPNG
+                        Squoosh
+        
+        Lazy Loading:
+                Load images only when they appear on the screen:
+                        <img src="book.jpg" alt="Book cover" loading="lazy">
+                        
+                        Improves performance, especially for long pages or galleries.
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+9. Real-World Example
+---------------------
+        check example.html
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+10. Interview Questions
+-----------------------
+        Questions
+        ---------
+        1. What does the alt attribute do?
+        -------------------------------------------------------
+        |  Provides alternate text for accessibility and SEO. |
+        -------------------------------------------------------
+        2. Difference between .png and .jpg?
+        ---------------------------------------------------------
+        |  PNG supports transparency; JPG is better for photos. | 
+        ---------------------------------------------------------
+        3. How do you make images responsive?
+        --------------------------------------------------------
+        |  max-width:100%; height:auto; or use <picture> tag.  |
+        --------------------------------------------------------
+        4. What’s the purpose of loading="lazy"?
+        --------------------------------------------------------
+        |  Delays image loading for performance optimization.  |
+        --------------------------------------------------------
+        5. What’s a self-closing tag?
+        -----------------------------------------------------------
+        |  A tag that doesn’t require an end tag — like <img />.  |
+        -----------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+11. Common Mistakes
+-------------------
+        Missing alt attribute → accessibility issue.
+
+        Using wrong image format → large file size or poor quality.
+        
+        Stretching images by fixing both width and height.
+
+        Forgetting loading="lazy" on large pages.
+
+        Using large uncompressed images → slow loading.
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+12.Mini Practice Tasks
+----------------------
+        You can check MINI-Tasks folder for Solution.
+
+        Task 1
+        ---------------------------------------------------------------------
+        |  Add a logo image to your page header with alt text and tooltip.  |
+        ---------------------------------------------------------------------
+        Task 2
+        --------------------------------------------------------------------------
+        |  Create a gallery with 3 images using width="200" and loading="lazy".  |
+        --------------------------------------------------------------------------
+        Task 3
+        -------------------------------------------------------
+        |  Make images responsive using inline style or CSS:  |
+        |  img {                                              |
+        |        width: 100%;                                 |
+        |        max-width: 400px;                            |
+        |        height: auto;                                |
+        |        border-radius: 8px;                          |
+        |        }                                            |
+        -------------------------------------------------------
+        Task 4
+        ----------------------------------------------------------------------------------
+        |  Use the <picture> element to serve a mobile and desktop version of an image.  |
+        ----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+13. Summary
+-----------
+      | Attribute       | Purpose         | Example                         |
+      -----------------------------------------------------------------------
+      | src             | Image source    | `<img src="photo.jpg">`         |
+      | ------------------------------------------------------------------- |
+      | alt             | Alternate text  | `<img alt="Book cover">`        |
+      | ------------------------------------------------------------------- |
+      | title           | Tooltip text    | `<img title="BookVault Logo">`  |
+      | ------------------------------------------------------------------- |
+      | width / height  | Size control    | `<img width="200">`             |
+      | ------------------------------------------------------------------- |
+      | loading="lazy"  | Lazy loading    | `<img loading="lazy">`          |
+      | ------------------------------------------------------------------- |
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+14. Real-World Analogy
+----------------------
+        Think of <img> like a picture frame:
+                src = the actual photo inside
+                alt = the label on the frame
+                title = tooltip when hovered
+                width/height = frame size
+---------------------------------------------------------------------------------------------
+-->

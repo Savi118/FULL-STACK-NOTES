@@ -1,0 +1,268 @@
+<!-- 
+--------------------
+        HTML
+--------------------
+
+-----------------------------------------------
+        Lesson-4 - Lists in HTML
+-----------------------------------------------
+
+---------------------------------------------------------------------------------------------
+1. What Are Lists in HTML?
+--------------------------
+        Lists are used to group related items together in a structured way. 
+        
+        HTML supports three main types of lists:
+                1. Unordered List (<ul>) → Bulleted list
+                2. Ordered List (<ol>) → Numbered list
+                3. Description List (<dl>) → Term–description pairs
+
+        Each item inside a list is wrapped in a <li> (list item) tag.
+        
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+2. Unordered List (<ul>)
+------------------------
+        Definition:
+                Used for items without any specific order — shown with bullets (•) by 
+                default.
+
+        Syntax:
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+
+        Attributes:
+                You can change the bullet style using the type attribute:
+                        <ul type="circle">   circle, square, disc 
+                                <li>React</li>
+                                <li>Node.js</li>
+                        </ul>
+
+        CSS Control Example:
+                ul {
+                  list-style-type: square; /* or circle, disc, none */
+                }
+
+        Use Case: 
+                Navigation menus, feature lists, unordered data.
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+3. Ordered List (<ol>)
+----------------------
+        Definition:
+                Used for step-by-step or ranked information — displays numbers or letters. 
+
+        Syntax:
+                <ol>
+                  <li>Sign Up</li>
+                  <li>Login</li>
+                  <li>Explore</li>
+                </ol>
+
+        Attributes:
+                type → changes the numbering style
+                start → sets a custom starting number
+                reversed → counts backward
+                Example:
+                        <ol type="A" start="3" reversed> 
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JS</li>
+                        </ol>
+        
+        Type Options:
+                ---------------------------------------
+                | Type  | Format                      |
+                ---------------------------------------
+                |   1   | Numbers (default)           |
+                | ----- | --------------------------- |
+                |   A   | Uppercase Letters           |
+                | ----- | --------------------------- |
+                |   a   | Lowercase Letters           |
+                | ----- | --------------------------- |
+                |   I   | Roman Numerals (uppercase)  |
+                | ----- | --------------------------- |
+                |   i   | Roman Numerals (lowercase)  |
+                ---------------------------------------
+
+        Use Case: 
+                Steps, rankings, recipes, procedures.
+--------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------
+4. Nested Lists
+---------------
+        You can nest lists (place a list inside another) to create subcategories.
+
+        Example:
+                <ul>
+                  <li>Frontend
+                    <ul>
+                      <li>HTML</li>
+                      <li>CSS</li>
+                      <li>JavaScript</li>
+                    </ul>
+                  </li>
+                  <li>Backend
+                    <ul>
+                      <li>Node.js</li>
+                      <li>Express</li>
+                    </ul>
+                  </li>
+                </ul>
+        Tip: 
+           Indent nested lists for readability and structure clarity.
+---------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------
+5. Description List (<dl>, <dt>, <dd>)
+--------------------------------------
+        Used for definitions or explanations (like a glossary).
+                
+        Syntax:
+                <dl>
+                  <dt>HTML</dt>
+                  <dd>HyperText Markup Language</dd>
+                  <dt>CSS</dt>
+                  <dd>Cascading Style Sheets</dd>
+                </dl>
+
+
+        Tags Meaning:
+                --------------------------------------
+                | Tag  | Meaning                     |
+                --------------------------------------
+                | <dl> | Description List (wrapper)  |
+                | ---- | --------------------------- |
+                | <dt> | Description Term            |
+                | ---- | --------------------------- |
+                | <dd> | Description Definition      |
+                --------------------------------------
+                
+        Use Case: 
+                Glossaries, FAQs, or data with definitions.
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+6. Real-World Example                                                                         
+---------------------                                                                         
+        A feature list for your BookVault app:                           
+                check example.html                                                            
+--------------------------------------------------------------------------------------------- 
+
+
+---------------------------------------------------------------------------------------------
+7. Interview Questions
+----------------------
+        Questions
+        ---------
+        1. Difference between <ul> and <ol>?
+        ----------------------------------------------------------
+        |  <ul> = unordered (bullets), <ol> = ordered (numbers). |
+        ----------------------------------------------------------
+        2. Which tag defines a list item?
+        ---------
+        |  <li> | 
+        ---------
+        3. Can you nest lists in HTML?
+        ----------------------------------------------------
+        |  Yes, lists can be nested inside <li> elements.  |
+        ----------------------------------------------------
+        4. What’s the difference between <dt> and <dd>?
+        -------------------------------------
+        |  <dt> = term, <dd> = definition.  |
+        -------------------------------------
+        5. How do you reverse an ordered list?
+        -------------------------------------------------
+        |  Use the reversed attribute (<ol reversed>).  |
+        -------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+5. Common Mistakes
+------------------
+        Forgetting to close <li> tags.
+
+        Placing text directly under <ul> or <ol> without <li>.
+        
+        Using <ol> when the order doesn’t matter.
+
+        Mixing <ul> and <ol> incorrectly (without nesting properly).
+
+        Always nest properly:
+                <ul>
+                        <li>Frontend
+                                <ol>
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                </ol>
+                        </li>
+                </ul>
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+6.Mini Practice Tasks
+---------------------
+        You can check MINI-Tasks folder for Solution.
+
+        Task 1
+        ----------------------------------------------------------------
+        |  Create a “My Favorite Books” list:                          |
+        |       Use an <ol> for ranking your top 5 books.              |
+        |       Add nested <ul> inside each for “Author” and “Genre.”  |
+        ----------------------------------------------------------------
+        Task 2
+        -----------------------------------------------------------
+        |  Build a glossary of web terms using <dl>, <dt>, <dd>.  |
+        -----------------------------------------------------------
+        Task 3
+        ----------------------------------------------------------------------------------
+        |  Make a “Project Setup Steps” section using <ol> with start="5" and reversed.  |
+        ----------------------------------------------------------------------------------
+        Task 4
+        -------------------------------------
+        |  Style your list using CSS:       |
+        |       ul {                        |
+        |         list-style-type: square;  |
+        |       margin-left: 20px;          |
+        |       }                           |
+        -------------------------------------
+---------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------
+7. Summary
+----------
+      | Tag   | Purpose                    | Example                            |
+      ---------------------------------------------------------------------------
+      | <ul>  | Unordered (bulleted) list  | `<ul><li>Item</li></ul>`           |
+      | ----------------------------------------------------------------------- |
+      | ----------------------------------------------------------------------- |
+      | <ol>  | Ordered (numbered) list    | `<ol><li>Step</li></ol>`           |
+      | ----------------------------------------------------------------------- |
+      | ----------------------------------------------------------------------- |
+      | <li>  | List Item                  | `<li>HTML</li>`                    |
+      | ----------------------------------------------------------------------- |
+      | ----------------------------------------------------------------------- |
+      | <dl>  | Description List           | `<dl>...</dl>`                     |
+      | ----------------------------------------------------------------------- |
+      | ----------------------------------------------------------------------- |
+      | <dt>  | Description Term           | `<dt>HTML</dt>`                    |
+      | ----------------------------------------------------------------------- |
+      | ----------------------------------------------------------------------- |
+      | <dd>  | Description Definition     | `<dd>Language for web pages</dd>`  |
+      | ----------------------------------------------------------------------- |
+---------------------------------------------------------------------------------------------
+-->
