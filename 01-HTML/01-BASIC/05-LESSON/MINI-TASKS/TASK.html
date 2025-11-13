@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Tasks: Navbar, Mailto, Anchor, Clickable Image</title>
+        <style>
+                /* Simple styling for clarity */
+                body {
+                        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+                        margin: 0;
+                        line-height: 1.6;
+                }
+
+                header {
+                        background: #0b74de;
+                        color: white;
+                        padding: 12px 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                }
+
+                .brand {
+                        font-weight: 700;
+                }
+
+                nav ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        gap: 12px;
+                }
+
+                nav a {
+                        color: white;
+                        text-decoration: none;
+                        padding: 8px 10px;
+                        border-radius: 6px;
+                }
+
+                nav a:hover {
+                        background: rgba(255, 255, 255, 0.12);
+                }
+
+                main {
+                        padding: 24px;
+                        max-width: 900px;
+                        margin: 0 auto;
+                }
+
+                section {
+                        margin-bottom: 40px;
+                }
+
+                .features {
+                        padding: 16px;
+                        border: 1px solid #ddd;
+                        border-radius: 8px;
+                        background: #fbfbff;
+                }
+
+                .clickable-img {
+                        display: inline-block;
+                        margin-top: 12px;
+                        text-decoration: none;
+                }
+
+                footer {
+                        text-align: center;
+                        color: #555;
+                        padding: 20px 0;
+                        border-top: 1px solid #eee;
+                        margin-top: 40px;
+                }
+
+                .top-links {
+                        margin-bottom: 12px;
+                }
+
+                /* Responsive small-screen nav */
+                @media (max-width:600px) {
+                        nav ul {
+                                flex-direction: column;
+                                background: rgba(255, 255, 255, 0.04);
+                                padding: 8px;
+                                border-radius: 6px;
+                        }
+                }
+        </style>
+</head>
+
+<body>
+
+        <!-- Small "jump to features" anchor at the very top (Task 3) -->
+        <div style="background:#f6f8fa; padding:8px 16px;">
+                <a href="#features" style="text-decoration:none; color:#0b74de; font-weight:600;">Jump to Features ↓</a>
+        </div>
+
+        <header>
+                <div class="brand">MySite</div>
+
+                <!-- Task 1: Navbar with 4 links. "Contact" opens in a new tab -->
+                <nav aria-label="Main navigation">
+                        <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#books">Books</a></li>
+                                <!-- Contact intentionally opens in a new tab (target="_blank") -->
+                                <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+                        </ul>
+                </nav>
+        </header>
+
+        <main>
+                <!-- Home section -->
+                <section id="home">
+                        <h1>Welcome</h1>
+                        <p>This page demonstrates the requested HTML features: a navbar, email & resume links, an anchor
+                                jump to "Features", and a clickable image linking to GitHub.</p>
+                </section>
+
+                <!-- About -->
+                <section id="about">
+                        <h2>About</h2>
+                        <p>Short about blurb. Replace with your content.</p>
+                </section>
+
+                <!-- Books -->
+                <section id="books">
+                        <h2>Books</h2>
+                        <p>List or links to books can go here.</p>
+                </section>
+
+                <!-- Features (target of anchor link) -->
+                <section id="features" class="features">
+                        <h2>Features</h2>
+                        <ul>
+                                <li>Responsive navbar with 4 links (Contact opens in a new tab).</li>
+                                <li>Email link using <code>mailto:</code> and a resume download link.</li>
+                                <li>Anchor jump from top of the page to this "Features" section.</li>
+                                <li>Clickable image linking to your GitHub or project.</li>
+                        </ul>
+
+                        <!-- Task 2: email link (mailto:) and resume download link -->
+                        <p>
+                                Email me: <a href="mailto:youremail@example.com">youremail@example.com</a><br>
+                                Download resume:
+                                <!-- Make sure file exists at files/resume.pdf or change the href to your real resume file -->
+                                <a href="files/resume.pdf" download="YourName_Resume.pdf"
+                                        title="Download resume">Download Resume (PDF)</a>
+                        </p>
+
+                        <!-- Task 4: clickable image linking to GitHub or project -->
+                        <!-- Using an inline SVG as the image so no external assets required. Replace the href with your repo/profile. -->
+                        <p>
+                                View my project on GitHub:
+                                <a class="clickable-img" href="https://github.com/your-username" target="_blank"
+                                        rel="noopener" title="Open GitHub in new tab">
+                                        <!-- Inline SVG (GitHub-mark style icon) -->
+                                        <svg width="64" height="64" viewBox="0 0 16 16" aria-hidden="true"
+                                                style="vertical-align:middle;">
+                                                <path fill="#000000"
+                                                        d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.58.82-2.14-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82A7.6 7.6 0 0 1 8 4.69c.68.003 1.36.092 1.99.27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.14 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                                        </svg>
+                                        <span style="margin-left:8px; vertical-align:middle;">GitHub / Projects</span>
+                                </a>
+                        </p>
+
+                </section>
+
+                <!-- Contact section in-page (extra) -->
+                <section id="contact">
+                        <h2>Contact (in-page)</h2>
+                        <p>You can also contact via email: <a
+                                        href="mailto:youremail@example.com">youremail@example.com</a></p>
+                        <p>Resume: <a href="files/resume.pdf" download>Download resume</a></p>
+                </section>
+
+                <footer>
+                        &copy; <span id="year"></span> MySite — Replace placeholders with your info.
+                </footer>
+        </main>
+        <script>
+                // small nicety: set current year
+                document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+
+</body>
+
+</html>
